@@ -1,0 +1,107 @@
+body {
+    font: normal 14px/1.2 Arial;
+    line-height: normal;
+    font-family: Arial, sans-serif;
+}
+
+.steps {
+    background-color: #39c2d7;
+    display: inline-block;
+    padding: 20px 50px 30px 50px;
+    width: 690px;
+    height: 110px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.step-unit {
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    font-size: inherit;
+    text-rendering: auto;
+    color: white;
+    text-shadow: 2px -2px 2px grey;
+    top: 120px;
+}
+
+.step-unit::before {
+    display: inline-block;
+    position: absolute;
+    font-family: FontAwesome;
+    text-rendering: auto;
+    border: 3px solid #217482;
+    border-radius: 50%;
+    font-size: 35px;
+    width: 40px;
+    height: 40px;
+    bottom: 30px;
+    padding: 20px;
+    /* -moz-box-shadow: 0px 0px 5px gray, inset 0px -6px 20px rgba(0, 0, 0, 0.7); */
+    box-shadow: 0px 0px 10px grey, inset 0px -6px 20px rgba(0, 0, 0, 0.7);
+    background: #E6E6E6;
+    color: gray;
+    text-shadow: none;
+}
+
+.done:hover::before {
+    background: #F4FF4E;
+}
+
+.done:hover {
+    color: #F4FF4E;
+}
+
+.done:active::before {
+    /* -moz-box-shadow: 0px 0px 5px gray, inset 0px 6px 20px rgba(0, 0, 0, 0.7); */
+    box-shadow: 0px 0px 5px gray, inset 0px 6px 20px rgba(0, 0, 0, 0.7);
+    padding: 26px 20px 14px 20px;
+    transition-duration: 200ms;
+    transition-property: box-shadow, padding;
+}
+
+.active {
+    color: #F4FF4E;
+    left: 250px;
+}
+
+.fa-comments {
+    left: 450px;
+}
+
+.fa-coffee {
+    left: 650px;
+}
+
+.active::before {
+    background: #F4FF4E;
+}
+
+.done::before,
+.active::before {
+    color: #39c2d7;
+}
+
+.step-unit::after {
+    text-shadow: 2px 2px 2px grey;
+    position: absolute;
+    font-size: 20px;
+    font-family: FontAwesome;
+    bottom: 65px;
+    right: 135px;
+    color: #E6E6E6;
+}
+
+.active::after {
+    content: "\f00c";
+}
+
+.disabled::after {
+    content: "\f061";
+}
+
+.fa-coffee::after {
+    right: 120px;
+    color: gray;
+    text-shadow: 2px 2px 2px black;
+}
